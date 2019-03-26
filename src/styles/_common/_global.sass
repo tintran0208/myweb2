@@ -4,3 +4,148 @@ html, body
 	font-size: 14px
 	height: 100%
 	width: 100%
+
+$main: #24417f
+$sec: #d9942c
+$xam: #b4b1ce
+$hover: #2b52ad
+
+=line($a: #000,$b: 1 )
+	content: ''
+	+pos(abs, null null 4px 50%)
+	width: 1.5rem
+	height: 3px
+	background: $a
+	transform: translateX(-50%)
+	transition: .1s all ease-in-out
+	opacity: $b
+
+header
++media-breakpoint-up(lg)
+	header
+		.navbar
+			display: block
+			.navbar-brand
+				img
+					display: block 
+					max-height: 5rem !important
+		ul 
+			li
+				a 
+					text-transform: uppercase
+					+fz(1.2rem)
+					+fw(600)
+					margin: 0 1.5rem
+					transition: .1s all ease-in-out
+					position: relative
+					color: $xam !important
+					letter-spacing: 1px
+					&:before
+						+line($sec, 1)
+						width: 0
+					&:hover
+						color: $main !important
+						&:before
+							width: 1.5rem
+					&.active
+						color: $main !important
+						position: relative
+						&:before
+							+line($sec, 1)
+
+.owl-carousel
+	.owl-nav
+			button
+				transition: .2s all ease-in-out
+				i 
+					width: 40px
+					height: 40px
+					+lh(40px)
+				&:focus
+					outline: none
+			.owl-prev
+				background: $main !important
+				+bor-rad(30px 5px 5px 5px)
+				color: $whites !important
+				border: 2px solid $main !important
+				&:hover
+					background: none !important
+					border: 2px solid $main !important
+					color: $main !important
+			.owl-next
+				border-radius: 5px 5px 30px 5px
+				background: none !important
+				border: 2px solid $sec !important
+				color: $sec !important
+				&:hover
+					background: $sec !important
+					color: $whites !important
+					border: 2px solid $sec !important
+
+footer 
+	background: lighten($xam, 20%)
+	.pop
+		img 
+			filter: grayscale(1)
+		.quotes 
+			color: $xam
+			+fz(1.2rem)
+		ul
+			li 
+				a 
+					i 
+						width: 3.2rem
+						height: 3.2rem
+						background: $main
+						+lh(3.2rem)
+						text-align: center
+						+fz(1.2rem)
+						color: $whites
+						+bor-rad(25px 5px 5px 5px)
+	.quicklink
+		h5 
+			+fw(600)
+			color: $main
+			position: relative
+			&:before
+				content: ''
+				height: 3px
+				width: 24px
+				background: $sec
+				+pos(abs, null null -6px 0)
+		ul
+			li 
+				margin: .5rem 0
+	.branding
+		padding: 0
+		h5
+			background: lighten($xam, 10%)
+			width: 320px
+			height: 55px
+			margin: 0 auto
+			margin-right: 0
+			+lh(60px)
+			+fz(1rem)
+			+bor-rad(40px 0 0 0)
+			+fw(400)
+			color: $main
+			span 
+				+fw(600)
++media-breakpoint-up(lg)
+	footer 
+		.pop
+			margin-left: 3rem
+			.quotes
+				+fz(18px)
+			p 
+				+fz(14px)
+				width: 450px
+			ul 
+				li 
+					a
+						i 
+							background: $xam
+							transition: .1s all ease-in-out
+						&:hover
+							i 
+								background: $main

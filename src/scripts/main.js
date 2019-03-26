@@ -6,6 +6,8 @@ $(document).ready(function () {
 		nav: false,
 		dots: true,
 		navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+		loop: true,
+		autoplay: true
 	});
 	// Phần Clients
 	$('.home-clients .owl-carousel').owlCarousel({
@@ -25,6 +27,28 @@ $(document).ready(function () {
 			// breakpoint from 992 up
 			992: {
 				items: 6,
+			}
+		}
+	});
+	$('.info .owl-carousel').owlCarousel({
+		items: 1,
+		nav: true,
+		dots: false,
+		navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+		loop: true,
+		autoplay: true
+	});
+	$('.review .owl-carousel').owlCarousel({
+		items: 1,
+		nav: true,
+		dots: false,
+		navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+		loop: true,
+		autoplay: false,
+		responsive: {
+			// breakpoint from 480 up
+			992: {
+				items: 2,
 			}
 		}
 	});

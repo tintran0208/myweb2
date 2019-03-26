@@ -1,28 +1,29 @@
 <!-- ////////////// HEADER ////////////// -->
-header.bg-light
-	.container
+header
+	.container-fluid.text-center
 		nav.navbar.navbar-expand-lg.navbar-light
-			a.navbar-brand(href="#") 
-				img(src="./img/logo.png", alt="Logo")
+			a.navbar-brand.mr-0.mt-lg-4(href="#") 
+				img.img-fluid(src="./img/logo.png", alt="Logo")
 			//- Đây là nút sẽ hiển thị trong mobile
 			button.navbar-toggler(type="button" data-toggle="collapse" data-target="#fullStackMenu" aria-controls="fullStackMenu" aria-expanded="false" aria-label="Toggle navigation")
 				span.fa.fa-bars
 			#fullStackMenu.collapse.navbar-collapse
 				//- Thuộc tính '.mr-auto' này sẽ đẩy me nu về bên phải 
-				.mr-auto
-				ul.navbar-nav
-					li.nav-item.active
-						a.nav-link(href="index.html")
-							| Trang chủ
-					li.nav-item.dropdown
-						a#dropdownFS.nav-link.dropdown-toggle(href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Gian hàng
-						.dropdown-menu(aria-labelledby="dropdownFS")
-							a.dropdown-item(href="#") Nam
-							a.dropdown-item(href="#") Nữ
+				ul.navbar-nav.justify-content-center.w-100.mt-5.mb-4
 					li.nav-item
-						a.nav-link(href="services.html") Dịch vụ
+						a.nav-link.active(href="#") Home
 					li.nav-item
-						a.nav-link(href="about.html") Về chúng tôi
+						a.nav-link(href="#") About
 					li.nav-item
-						a.nav-link(href="contact.html") Liên hệ
+						a.nav-link(href="#") Contact
+					li.nav-item
+						a.nav-link(href="#") Shop
+					li.nav-item
+						a.nav-link(href="#") My account
+					li.nav-item
+						a.nav-link(href="#")
+							i.fa.fa-search.fa-lg
+					li.nav-item
+						a.nav-link(href="#") 
+							i.fa.fa-shopping-bag.fa-lg
 <!-- ////////////// HEADER ////////////// -->

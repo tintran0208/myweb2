@@ -1,67 +1,419 @@
-/////////////////////////////////
-// Phần Slider
-/////////////////////////////////
 .home-slider
 	.owl-carousel
-		// Phần Slider
 		.item
-			position: relative
 			.title
-				+pad(2rem 0)
-				height: 100%
-				width: 100%
-				display: flex
-				align-items: center
-			+media-breakpoint-up(md)
-				.title
-					+pos(abs, 0 null null 0)
-					color: $whites
-					+text-shadow()
-					h2
-						+fz(3rem)
-					p 
-						+fz(1.5rem)
-						+lh(2rem)
-		// Phần Control
+				h1 
+					+fz(1.5rem)
+					color: $main
+					position: relative
+					+fw(600)
+					&:before
+						content: ''
+						+pos(abs, null null -.6rem 0%)
+						width: 2.5rem
+						height: 3px
+						background: $sec
+						transition: .1s all ease-in-out
+				p
+					color: $xam
+					+fw(200)
+				.btn-title
+					text-align: right
+					.btn
+						+pad(1rem 2rem)
+						+bor-rad(2rem 7px 7px 7px)
+						text-transform: uppercase
+						color: $whites
+						+fw(500)
+						letter-spacing: 2px
+						&:focus
+							outline: none !important
+							box-shadow: none
+					.btn-1
+						background: $main
+						border: 2px solid $main
+					.btn-2
+						border: 2px solid $sec
+						color: $main
+						+fw(600)
 		.owl-dots
-			margin-bottom: 2rem
-/////////////////////////////////
-// Phần News
-/////////////////////////////////
+			button
+				span 
+					+bor-rad(5px 2px 2px 2px)
+					background: $xam
+				&.active
+					span 
+						background: $main
+				&:hover
+					span 
+						background: $sec
+				&:focus
+					outline: none
+	+media-breakpoint-up(sm)
+		.owl-carousel
+			.item
+				.title
+					h1
+						+fz(1.8rem) 
+						&:before
+							+pos(abs, null null -.6rem 0%)
+	+media-breakpoint-up(md)
+		.owl-carousel
+			.item
+				.title
+					h1
+						&:before
+							+pos(abs, null null -.6rem 0%)
+	+media-breakpoint-up(lg)
+		.owl-carousel
+			.item
+				position: relative
+				.title
+					+pos(abs, 40% -25% null null)
+					transform: translateY(-40%) 
+					h1
+						+fz(2.5vw)
+						+lh(2.5vw)
+						&:before
+							+pos(abs, null null -.6rem 100%)
+							transform: translateX(-100%)
+					.des 
+						+fz(1.2vw)
+					.btn-title
+						justify-content: flex-end
+						.btn
+							+pad(1.3vw 4vw)
+							+bor-rad(2vw 7px 7px 7px)
+							text-transform: uppercase
+							color: $whites
+							+fw(500)
+							+fz(1vw)
+							letter-spacing: 2px
+						.btn-1
+							background: $main
+							border: 2px solid $main
+							&:hover
+								background: none
+								color: $main
+						.btn-2
+							border: 2px solid $sec
+							color: $main
+							&:hover
+								background: $sec
+								color: $whites
+			.owl-dots
+				+pos(abs, null 6.5% 5% null)
+				transform: translateX(-6.5%)
 
-.home-news
-	.item 
-		figure
-			.blockimg
-				+bor-rad(10px)
-				overflow: hidden
-				img
-					width: 100%
-			figcaption 
-				margin-top: 1rem
-				h3 
-					+fz(1.1rem)
-					margin-bottom: 0
-				time 
-					+fz(.85rem)
-					color: darken($whites,30%)
-				p 
-					margin-top: .5rem
-					color: darken($whites,50%)
-/////////////////////////////////
-// Phần News
-/////////////////////////////////
 
-.home-clients
+.shop
+	.leading
+		h2 
+			color: $main
+			+fw(600)
+			position: relative
+			&:before
+				content: ''
+				width: 35px
+				height: 3px
+				+pos(abs, null null -7px 50%)
+				background: $sec
+				transform: translateX(-50%)
+	.item_shop
+		margin-top: 85px
+		.box
+			box-shadow: 0 0 35px -6px $xam
+			border-radius: 10px 40px 10px 10px
+			figure 
+				figcaption 
+					h3 
+						+fz(1.5rem)
+						+fw(500)
+						color: $main
+						position: relative
+						&:before
+							content: ''
+							width: 35px
+							height: 3px
+							+pos(abs, null null -50% 0%)
+							background: $sec
+							transform: translateY(50%)
+					.fav 
+						+pos(abs, 2rem 4rem null null)
+						+fz(2rem)
+						color: $xam
+					p
+						color: $xam
+						padding: 0
+						margin: 0
+						display: inline-block
+						vertical-align: top
+						+lh(38px)
+					.oldprice
+						+fz(1.2rem)		
+					.price
+						+fz(1.5rem)
+						+fw(600)
+						float: right
+						color: $sec
+			&:hover
+				a
+					text-decoration: none
+		+media-breakpoint-up(lg)
+			.box
+				transition: .2s all ease-in-out
+				box-shadow: none
+				figure 
+					figcaption 
+						h3
+							+fz(1.5vw) 
+							color: $xam
+							transition: .2s all ease-in-out
+							&:before
+								background: $xam
+								transition: .2s all ease-in-out
+						.fav
+							+fz(2vw)
+							top: 1rem
+							right: 3rem
+							&:hover
+								color: $main
+						.price
+							transition: .2s all ease-in-out
+							color: $xam
+				&:hover
+					box-shadow: 0 0 35px -6px $xam
+					figure 
+						figcaption
+							h3 
+								color: $main
+								&:before
+									background: $sec
+							.price
+								color: $sec
+
+.info
+	min-height: 100vh
+	align-items: center
+	position: relative
+	margin: 10rem 0
 	.owl-carousel
-		.item 
-			+pad(.5rem)
-		// Phần Control
+		background: lighten($xam, 20%)
+		+bor-rad(40px 0px 0px 10px)
+		padding: 2rem 2rem
+		.item
+			width: 300px
+			margin: 0 auto
+			margin-bottom: 5px
+			position: relative		
+			h3 
+				color: $main
+				+fw(600)
+				position: relative
+				&:before
+					content: ''
+					width: 35px
+					height: 3px
+					+pos(abs, null null -15px 0%)
+					background: $sec
+			p 
+				color: $xam
+				+fw(300)
 		.owl-nav
-			margin-bottom: 2rem
-			button 
-				i 
-					display: block
-					width: 2rem
-					height: 2rem
-					+lh(2rem)
+			text-align: left
+			width: 300px !important
+			margin: 0 auto
+			margin-top: 2rem
+	.box2img
+		position: absolute
+		width: 100%
+		height: 100%
+		.box1, .box2
+			overflow: hidden
+			img 
+				width: 120%
+		.box1
+			width: 180px
+			+pos(abs, -20% null null 1.1rem)
+			+bor-rad(5px 40px 5px 5px)
+		.box2
+			z-index: 1
+			width: 180px
+			height: 250px
+			+pos(abs, null 0 -19% null)
+			filter: grayscale(1)
+			+bor-rad(5px 0 0 40px)
++media-breakpoint-up(md)
+	.info
+		margin: 10rem 0
+		.owl-carousel
+			width: 85vw
+			margin: 0 auto
+			margin-right: 0
+			.item
+				width: 40vw
+				margin: 0 14vw
+				padding: 2rem 0
+				h3 
+					+fz(2rem)
+				p 
+					+fz(1.1rem)
+		.owl-nav
+			margin: 1rem 14vw !important
+		.box2img
+			.box1
+				+pos(abs, 13% null null 1.1rem)
+				z-index: 1
+				width: 25vw
+			.box2
+				+pos(abs, -2% 0 null null)
+				width: 25vw
+				height: 42vw
++media-breakpoint-up(lg)
+	.info
+		margin-bottom: 10rem
+		.owl-carousel
+			.item
+				width: 32vw
+				margin: 0 18vw
+				padding: 3rem 0
+				h3 
+					+fz(2.6vw)
+				p 
+					+fz(1.2vw)
+		.owl-nav
+			margin: 3rem 18vw !important
+		.box2img
+			.box1
+				+pos(abs, 10% null null 1.1rem)
+				width: 28vw
+				+bor-rad(10px 60px 10px 10px)
+				height: auto
+			.box2
+				width: 28vw
+				+pos(abs, -10% 0 null null)
+				height: 47vw
+				+bor-rad(10px 0px 0px 60px)
+
+.review
+	padding: 3rem 0
+	.owl-carousel
+		.item
+			width: 367px
+			height: 120px
+			background: lighten($xam, 20%)
+			overflow: hidden
+			margin: 0 auto
+			+bor-rad(40px 5px 5px 5px)
+			figure
+				.boxreview
+					width: 100px
+					height: 120px
+					overflow: hidden
+					float: left
+					position: relative
+					img 
+						width: 160%
+						position: absolute
+						left: -2rem
+				figcaption
+					padding: .5rem 1rem
+					h3 
+						+fz(1.2rem)
+						color: $main
+						text-align: right
+						width: auto
+						position: relative
+						+fw(600)
+						&:before
+							content: ''
+							width: 30px
+							height: 3px
+							background: $sec
+							position: absolute
+							right: 0
+							bottom: -10px
+					p, .name
+						+fz(.9rem)
+						color: #767676
+					.name 
+						+fw(600)
+	.owl-nav 
+		.owl-prev
+			border-radius: 30px 5px 5px 5px
+			background: none !important
+			border: 2px solid $sec !important
+			color: $sec !important
+			&:hover
+				background: $sec !important
+				color: $whites !important
+				border: 2px solid $sec !important
+		.owl-next 
+			background: $main !important
+			+bor-rad(5px 5px 30px 5px)
+			color: $whites !important
+			border: 2px solid $main !important
+			&:hover
+				background: none !important
+				border: 2px solid $main !important
+				color: $main !important
++media-breakpoint-up(md)
+	.review
+		.owl-carousel
+			.item
+				position: relative
+				width: 500px
+				height: 150px
+				figure 
+					.boxreview
+						width: 150px
+						height: 150px
+						img 
+							width: 140%
+							left: -1.5rem
+					figcaption
+						+pos(abs, 50% 1rem null null)
+						transform: translateY(-50%)
+						h3 
+							+fz(1.5rem)
+							width: 300px
+						p, .name
+							+fz(1rem)
+		.owl-nav
+			position: absolute
+			width: 100%
+			top: 50%
+			transform: translateY(-50%)
+			margin: 0 !important
+			.owl-prev
+				+pos(abs, null null null 2rem)
+				transform: translateY(-50%)
+			.owl-next
+				+pos(abs, null 2rem null null)
+				transform: translateY(-50%)
++media-breakpoint-up(lg)
+	.review
+		padding: 0 0 7rem
+		.owl-carousel
+			width: 90%
+			margin: 0 auto
+			.item
+				width: 40vw
+				height: 11vw
+				figure
+					.boxreview
+						width: 11vw
+						height: 11vw
+					figcaption
+						// padding: .5rem .2vw
+						h3 
+							+fz(1.6vw)
+							width: 25vw
+						p, .name
+							+fz(1.1vw)
+		.owl-nav
+			.owl-prev
+				left: -4rem
+			.owl-next
+				right: -4rem
+

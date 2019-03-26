@@ -1,78 +1,79 @@
 extends _layout/layout
 
-//- Các giá trị mặc định cho trang web
 block variables
-	- var title = 'Home'
-	- var description = 'Description for home page'
-	- var bodyclass = 'home'
+	- var title = 'Index'
+	- var description = 'Description for about page'
+	- var bodyclass = 'index'
 
-//- Phần khai báo body
 block body
-	//- Bạn viết code vào đây nhớ là phải mở đầu bằng section ở mỗi khối
 	section.home-slider
-		.owl-carousel.owl-theme
-			.item
-				img(src="./img/home_slider_1.jpg", alt="")
-				.title
-					.container
-						.row
-							.col-md-7
-								h2 Chúng tôi là FullStack Vietnam
-								p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-			.item
-				img(src="./img/home_slider_1.jpg", alt="")
-				.title
-					.container
-						.row
-							.col-md-7
-								h2 Chúng tôi là FullStack Vietnam
-								p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-			.item
-				img(src="./img/home_slider_1.jpg", alt="")
-				.title
-					.container
-						.row
-							.col-md-7
-								h2 Chúng tôi là FullStack Vietnam
-								p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-	section.home-news
-		.container
+		.owl-carousel.owl-loaded.owl-theme
+			- for(x=0;x<3;x++)
+				.item
+					figure
+						img(src="./img/home_slider.png", alt="")
+						.title.mt-3
+							.container-fluid
+								.row
+									.col-lg-6.offset-lg-3.text-lg-right
+										h1.mb-4.mb-sm-5.offset-lg-2 Lorem ipsuxemm dolor sit amet consectetur adipiscing sed do
+										p.des.mb-lg-0.offset-lg-5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+										.btn-title.d-flex.mt-lg-4
+											p.mr-2.mb-0
+												a.btn.btn-1(href="#") View more
+											p.ml-2.mb-0
+												a.btn.btn-2(href="#") View more
+	section.shop
+		.container-fluid.py-5
 			.row
-				.col-md-4.item
-					figure
-						.blockimg
-							img(src="./img/home_news_1.jpg", alt="", srcset="")
-						figcaption
-							h3 
-								a(href="#") Chúng tôi là FullStack Vietnam
-							time 22/06/2018
-							p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-				.col-md-4.item
-					figure
-						.blockimg
-							img(src="./img/home_news_2.jpg", alt="", srcset="")
-						figcaption
-							h3 
-								a(href="#") Chúng tôi là FullStack Vietnam
-							time 22/06/2018
-							p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-				.col-md-4.item
-					figure
-						.blockimg
-							img(src="./img/home_news_3.jpg", alt="", srcset="")
-						figcaption
-							h3 
-								a(href="#") Chúng tôi là FullStack Vietnam
-							time 22/06/2018
-							p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti incidunt ex, autem dignissimos illum aperiam pariatur in explicabo corporis delectus totam! 
-	section.home-clients.mt-5
-		.container
+				.col.leading.text-center
+					h2 BÁN CHẠY
+			.row.item_shop
+				- for(x=0;x<4;x++)
+					.col-md-6.mb-5.mb-md-0.col-lg-3
+						.box
+							a(href="")
+								figure.p-4
+									.box-img.text-center
+										img.img-fluid(src="./img/item_"+(x+1)+".png", alt="")
+									figcaption
+										h3.mb-5 Lorem ipsum dolor sit amet consectetur adipisicing elit
+										.fav 
+											i.fa.fa-heart
+										p.oldprice 
+											del 300.000đ
+										p.price $30
+	
+	section.info.d-flex.justify-content-center
+		.container-fluid
+			.row
+				.col.holder.pr-0
+					.owl-carousel.owl-loaded.owl-theme
+						- for(x=0;x<3;x++)
+							.item 
+								h3.mb-5 Lorem ipsuxemm dolor sit amet
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								p Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. 
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								p Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+		.box2img
+			.box1
+				img(src="./img/Trinh3.png", alt="")
+			.box2
+				img(src="./img/Trinh1.png", alt="")
+
+	section.review
+		.container-fluid
 			.row
 				.col
-					.owl-carousel.owl-theme
-						- for(x=1;x<10;x++)
+					.owl-carousel.owl-loaded.owl-theme
+						- for(x=0;x<4;x++)
 							.item
-								if (x < 7)
-									img(src="./img/clients_"+x+".png", alt="")
-								else
-									img(src="./img/clients_"+(x-3)+".png", alt="")
+								figure
+									.boxreview
+										img(src="./img/Trinh2.png", alt="")
+									figcaption.text-right
+										h3.mb-4 Lorem ipsuxemm dolor sit amet consectetur adipiscing sed do 
+										p.mb-0.text-right CEO - GC
+										.name Nguyen Thanh Heo
+
